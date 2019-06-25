@@ -105,17 +105,17 @@ colnames(liver_data)
 Now dividing the dataset into training and testing sets.
 ```{r}
 # 70% of the sample size
-smp_size <- floor(0.70 * nrow(liver_data3))
+smp_size <- floor(0.70 * nrow(liver_data))
 
 ## set the seed to make your partition reproducible
 set.seed(123)
-train_ind <- sample(seq_len(nrow(liver_data3)), size = smp_size)
-train_data <- liver_data3[train_ind, ]
-test_data <- liver_data3[-train_ind, ]
+train_ind <- sample(seq_len(nrow(liver_data)), size = smp_size)
+train_data <- liver_data[train_ind, ]
+test_data <- liver_data[-train_ind, ]
 
 str(train_data)
 str(test_data)
-str(liver_data3)
+str(liver_data)
 ```
 Now that the data has been prepared, the model construction process can be initiated. Since this is a classificaiton problem, the implementation of KNN, CART, SVM, and Logistic Regression.
 
