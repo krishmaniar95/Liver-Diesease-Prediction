@@ -4,7 +4,7 @@
 The data set 
 Calling the required libraries:
 
-```{r, results='hide'}
+d```{r, results='hide'}
 library(ggplot2) 
 library(readr)
 library(psych)
@@ -102,7 +102,7 @@ liver_data <- liver_data[,c(1,3,6,8,9,10,11)]
 colnames(liver_data)
 ```
 
-Now dividing the dataset into training and testing sets.
+Now dividing the dataset into training and testing sets, for SVM and KNN
 ```{r}
 # 70% of the sample size
 smp_size <- floor(0.70 * nrow(liver_data))
