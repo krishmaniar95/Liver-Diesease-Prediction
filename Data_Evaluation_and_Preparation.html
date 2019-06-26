@@ -776,6 +776,11 @@ roc(patients$Dataset,as.numeric(dtpred), plot=TRUE, percent = TRUE, legacy.axes=
 ## 
 ## Data: as.numeric(dtpred) in 165 controls (patients$Dataset 0) &lt; 414 cases (patients$Dataset 1).
 ## Area under the curve: 75.23%</code></pre>
+<p>From the three fitted models, it is evident that the best model is the logistic regression model, since it has the highest AUC of 75.8%. Based on this an appropriate cut-off can be selected using data extracted from the ROC curve, making a trade off between the Falase Positive Rate and the True Positive Rate. In this case study, the goal should be to reduce the number of false negative cases, even though this may decrease the accuracy of the model. This is because, missing out on a patient’s disease, could prove fatal for the patient, and is much worse than incorrectly predicting the presence of a liver disease.</p>
+<div id="conclusion-and-scope" class="section level3">
+<h3>Conclusion and Scope:</h3>
+<p>This is a promosing project, that could be worked on further to create better models and eventually be good enough to implement in the the real world, saving doctors’ precious time around the globe, and help save lives. As we were pressed on time while working on this project, we did not fine tune our models. If given more time, we could have put in more effort on feature selection, and model tuning, which would have resulted in better results. The data set consisted of mainly male patients and was too small to better train the models.For future work, more data needs to be collected to get a more rounded dataset and use better machine learning algorithms to tackle this problem.</p>
+</div>
 </div>
 
 
