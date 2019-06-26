@@ -5,7 +5,7 @@ library(rpart.plot)
 library(maptree)
 library(cluster)
 #Creating the model
-dtmodel<-rpart(Diagnosis~.,data = patients, method = "class")
+dtmodel<-rpart(Dataset~.,data = patients, method = "class")
 printcp(dtmodel)
 rpart.plot(dtmodel)
 summary(dtmodel)
@@ -17,8 +17,9 @@ plot(dtmodel, uniform=TRUE, main="Classification Tree for Patient Records")
 dtpred<-predict(dtmodel,type = "class")
 
 #Confusion Matrix:
-confusionMatrix(dtpred,as.factor(patients$Diagnosis))
+confusionMatrix(dtpred,as.factor(patients$Dataset))
 
 #ROC Plot
-plot(performance(prediction(as.numeric(dtpred),patients$Diagnosis),"tpr","fpr"),main ="ROC Curve", colorize = T)
+roc(patients$Dataset,as.numeric(dtpred), plot=TRUE, percent = TRUE, legacy.axes=TRUE, main="ROC Curve for CART ",xlab = "False Positive Perecentage", ylab="True Positive Rate", print.auc=TRUE)
+
 

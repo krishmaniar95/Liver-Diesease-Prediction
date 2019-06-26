@@ -134,3 +134,10 @@ error_rate
 
 false_pos_rate <- table25[2,1]/(table25[2,1] + table25[2,2])
 false_pos_rate
+
+
+#ROC Curve 
+k25 <- knn(train = train_knn2, test = test_knn2, cl = train_knn_label, k=25, prob = TRUE)
+k25_prob<-attr(k25, "prob")
+plot(performance(prediction(k25_prob,test_knn_label),"tpr","fpr"), main = "ROC Curve for KNN", colorize = T)
+roc(test_knn_label,k25_prob, percent = TRUE, main = "ROC Curve for KNN",xlab="False Positive Percentage", ylab="True Positive Percentage", print.auc=TRUE)
