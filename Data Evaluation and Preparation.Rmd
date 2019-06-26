@@ -294,7 +294,6 @@ confusionMatrix(as.factor(patients$Dataset),as.factor(ifelse(pred>0.5,1,0)))
 #Plotting the ROC Curve:
 roc(patients$Dataset,pred, plot=TRUE, percent = TRUE, legacy.axes=TRUE, main="ROC Curve for Logistic Regression" ,xlab = "False Positive Perecentage", ylab="True Positive Rate", print.auc=TRUE)
 
-
 ```
 
 Implementing a CART model on the dataset:
